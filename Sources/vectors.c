@@ -3,33 +3,30 @@
 extern void _EntryPoint(void); // Entry point after Reset
 extern void vPortYield(void);
 extern void vPortTickInterrupt(void); // port.c
-#ifdef EN_SCI
-extern void sciHandler(void); // sci.c
-#endif
 
 /******************************************************************************
 *  U N U S E D   I S R   T R A P S
 ******************************************************************************/
 __interrupt void isrTrap(void) {
-  NOP();
+  __asm nop;
 }
 __interrupt void irqTrap(void) {
-  NOP();
+  __asm nop;
 }
 __interrupt void xirqTrap(void) {
-  NOP();
+  __asm nop;
 }
 __interrupt void swiTrap(void) {
-  NOP();
+  __asm nop;
 }
 __interrupt void unimpTrap(void) {
-  NOP();
+  __asm nop;
 }
 __interrupt void copTrap(void) {
-  NOP();
+  __asm nop;
 }
 __interrupt void cmfTrap(void) {
-  NOP();
+  __asm nop;
 }
 
 
@@ -78,11 +75,7 @@ void (* const interrupt_vectors[])() @0xff80 =
   isrTrap,            // $FFD0 vector 23  Reserved
   isrTrap,            // $FFD2 vector 22  ADC
   isrTrap,            // $FFD4 vector 21  SCI1
-#ifdef EN_SCI
-  sciHandler,         // $FFD6 vector 20  SCI0
-#else
   isrTrap,            // $FFD6 vector 20  SCI0
-#endif
   isrTrap,            // $FFD8 vector 19  SPI0
   isrTrap,            // $FFDA vector 18  Pulse Accumulator A Input Edge
   isrTrap,            // $FFDC vector 17  Pulse Accumulator A Overflow
