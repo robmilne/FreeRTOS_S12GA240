@@ -1,3 +1,6 @@
+/******************************************************************************
+ * vectors.c
+ ******************************************************************************/
 #include "all.h"
 
 extern void _EntryPoint(void); // Entry point after Reset
@@ -29,7 +32,7 @@ __interrupt void cmfTrap(void) {
   __asm nop;
 }
 
-
+// MC9S12GA240 interrupt vectors
 void (* const interrupt_vectors[])() @0xff80 =
 {
   isrTrap,            // $FF80 vector 63  Spurious interrupt

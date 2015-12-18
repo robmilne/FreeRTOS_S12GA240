@@ -59,4 +59,4 @@
 void ledInit(void);
 void vParTestToggleLED(uint8_t val);
 
-#endif /* __LED_H__ */
+#endif // __LED_H__

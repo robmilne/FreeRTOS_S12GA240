@@ -4,11 +4,7 @@
 #include "all.h"
 #include "timer.h"
 
-
-/******************************************************************************
-*  S T A T I C    V A R I A B L E S
-******************************************************************************/
-// tick isr period (ioc0Handler)
+// tick isr period - global var
 uint16_t g_tick_period;
 
 void timInit(void) {

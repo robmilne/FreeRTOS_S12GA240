@@ -1,3 +1,6 @@
+/******************************************************************************
+ * all.h
+ ******************************************************************************/
 #ifndef _ALL_H_
 #define _ALL_H_
 
@@ -21,7 +24,7 @@
 *  C U S T O M    D A T A    T Y P E S
 ******************************************************************************/
 #define uint8_t   unsigned char
-#define bool    unsigned char
+#define bool      unsigned char
 #define uint16_t  unsigned short
 #define uint32_t  unsigned long
 #define int8_t    signed char
